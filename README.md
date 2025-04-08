@@ -1,40 +1,89 @@
 # Linear Media Player
 
-Hey, thanks for taking the time to work on this exercise. We're excited to see what you come up with –
-the goal is to create an audio player for playing a predefined playlist of audio files. Think of it
-like a stripped-down version of Spotify or the classic Winamp.
+## Overview
 
-### Getting started
+Linear Media Player is a modern, minimalist audio player built with React and Vite. It features a clean interface that allows users to easily browse and play audio tracks with a focus on simplicity and usability.
 
-Clone this repo which was created _just for you_, make it yours and let us know once the project is complete by pushing
-your commits and replying through email. 
+## Features
 
-You can use `npm` to install the dependencies and run the basic React project. Feel free to add any additional libraries 
-or frameworks you need.
+- Sleek, intuitive user interface
+- Playlist management
+- Audio visualization
+- Responsive design that works on desktop and mobile devices
+- Fast loading times thanks to Vite build system
+
+## Technologies Used
+
+- React 18
+- TypeScript
+- Vite
+- CSS Modules
+- HTML5 Audio API
+
+## Live Demo
+
+Check out the live demo: [Linear Media Player](https://media-player-exercise-atty57-eba3v0470-atty57s-projects.vercel.app/)
+
+## Installation
+
+To run this project locally:
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/linear-media-player.git
+
+# Navigate to the project directory
+cd linear-media-player
+
+# Install dependencies
 npm install
+
+# Start the development server
 npm run dev
 ```
 
-### Requirements
+## Project Structure
 
-We'd like to see a working media player that can play through a playlist of audio files (included), display info on the
-currently playing track and supporting basic functionality like play/pause, next track, etc. Beyond that, feel free to get
-creative with the design and functionality.
+```
+linear-media-player/
+├── src/
+│   ├── components/
+│   │   ├── MediaPlayer.tsx
+│   │   └── PlaylistSelector.tsx
+│   ├── data/
+│   ├── types/
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── public/
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
 
-Plan on spending 2-4 hours to complete this exercise.
+## Deployment
 
-Please update this README to include a screenshot of the completed exercise at the top.
+This project is deployed on Vercel. To deploy your own version:
 
-### Playlist data
+1. Fork this repository
+2. Sign up for a Vercel account if you don't have one
+3. Connect your GitHub account to Vercel
+4. Import the repository in Vercel
+5. Deploy!
 
-The playlist data is stored in `src/data/playlists.json`. It includes a list of audio files and some associated metadata,
-you can import the json file directly with no need for network requests.
+## Future Improvements
 
-### Attribution
+- Add volume control
+- Implement dark/light theme toggle
+- Add support for creating custom playlists
+- Implement audio equalization
+- Add support for more audio formats
 
-This project includes music from the following albums:
+## License
 
-- **"Deep House"** by _Nul Tiel Records_ is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-- **"Neither and Both"** by _Brylie Christopher Oxley_ is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+MIT License
+
+---
+
+*This project was created as part of a coding exercise.*
