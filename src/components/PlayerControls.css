@@ -1,0 +1,40 @@
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.player-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 50px;
+  font-weight: 500;
+  padding: 12px 24px;
+}
+
+.prev-button, .next-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.prev-button:hover, .next-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.play-pause-button {
+  background-color: #1db954;
+  color: white;
+  font-size: 1rem;
+  padding: 14px 40px;
+}
+
+.play-pause-button:hover {
+  background-color: #1ed760;
+}

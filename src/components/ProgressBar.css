@@ -1,0 +1,69 @@
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 0.5rem 0;
+  margin: 15px 0;
+}
+
+.progress-bar-wrapper {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  outline: none;
+  border: none;
+  position: absolute;
+  margin: 0;
+  z-index: 10;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1db954;
+  box-shadow: 0 0 8px rgba(29, 185, 84, 0.8);
+  cursor: pointer;
+  border: 2px solid #1db954;
+  margin-top: -4px;
+}
+
+.progress-bar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1db954;
+  box-shadow: 0 0 8px rgba(29, 185, 84, 0.8);
+  cursor: pointer;
+  border: 2px solid #1db954;
+}
+
+.progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #1db954;
+  border-radius: 2px;
+}
+
+.time-elapsed, .time-duration {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  min-width: 40px;
+}

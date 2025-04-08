@@ -1,0 +1,54 @@
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .now-playing .track-info {
+    flex: 1;
+  }
+  
+  .now-playing::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--primary-color), #4adfcf);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+  }
+  
+  .now-playing .track-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .now-playing .track-details {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+  
+  .now-playing .track-details strong {
+    color: var(--text-color);
+  }
+  
+  .now-playing .track-duration {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  @media (max-width: 768px) {
+    .now-playing {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: center;
+    }
+    
+    .now-playing::before {
+      margin: 0 auto 1rem;
+    }
+  }
+  

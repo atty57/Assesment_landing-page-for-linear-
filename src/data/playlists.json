@@ -1,0 +1,98 @@
+{
+  "playlists": [
+    {
+      "name": "Deep House",
+      "artist:": "Nul Tiel Records",
+      "year": 2022,
+      "tracks": [
+        {
+          "name": "Breathe",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Breathe.mp3",
+          "duration": 265
+        },
+        {
+          "name": "Imagery Intelligence",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Imagery%20Intelligence.mp3",
+          "duration": 484
+        },
+        {
+          "name": "Surfing",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Surfing.mp3",
+          "duration": 312
+        },
+        {
+          "name": "Subaqueous",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Subaqueous.mp3",
+          "duration": 417
+        },
+        {
+          "name": "Elastic",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Elastic.mp3",
+          "duration": 314
+        },
+        {
+          "name": "Infraction",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Infraction.mp3",
+          "duration": 286
+        },
+        {
+          "name": "Ascent",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Ascent.mp3",
+          "duration": 313
+        },
+        {
+          "name": "Shake",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Shake.mp3",
+          "duration": 378
+        },
+        {
+          "name": "Endless",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/deep-house/Endless.mp3",
+          "duration": 398
+        }
+      ]
+    },
+    {
+      "name": "Neither and Both",
+      "artist:": "Brylie Christopher Oxley",
+      "year": 2023,
+      "tracks": [
+        {
+          "name": "A Gentle Fog Descends",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/Breathe.mp3",
+          "duration": 430
+        },
+        {
+          "name": "Everyting Tastes Different",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/Everyting%20Tastes%20Different.mp3",
+          "duration": 351
+        },
+        {
+          "name": "A Most Joyous Occasion",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/A%20Most%20Joyous%20Occasion.mp3",
+          "duration": 336
+        },
+        {
+          "name": "Ethereal Cafe",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/Ethereal%20Cafe.mp3",
+          "duration": 415
+        },
+        {
+          "name": "Melancholy Aurora",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/Melancholy%20Aurora.mp3",
+          "duration": 302
+        },
+        {
+          "name": "Mostly Melody",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/Mostly%20Melody.mp3",
+          "duration": 360
+        },
+        {
+          "name": "The Companionship of Isolation",
+          "url": "https://storage.googleapis.com/linear-worktrial/media-player/neither-and-both/The%20Companionship%20of%20Isolation.mp3",
+          "duration": 322
+        }
+      ]
+    }
+  ]
+}

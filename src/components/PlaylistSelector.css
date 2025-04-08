@@ -1,0 +1,39 @@
+.playlist-selector {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .playlist-selector h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .playlist-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .playlist-tabs button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-weight: 500;
+  }
+  
+  .playlist-tabs button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .playlist-tabs button.active {
+    background-color: var(--primary-color);
+    color: #000;
+  }
+  
