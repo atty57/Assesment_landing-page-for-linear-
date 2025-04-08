@@ -97,6 +97,7 @@ function MediaPlayer({
         tracks={playlist.tracks}
         currentTrackIndex={currentTrackIndex}
         onTrackSelect={onTrackChange}
+        isPlaying={isPlaying}
       />
     </div>
   );

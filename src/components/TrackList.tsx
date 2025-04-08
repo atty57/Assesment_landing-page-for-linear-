@@ -1,4 +1,4 @@
-// components/TrackList.tsx
+// TrackList.tsx
 import { useState, useEffect } from 'react';
 import { FaRandom, FaHeart, FaEllipsisH } from 'react-icons/fa';
 import './TrackList.css';
@@ -12,6 +12,7 @@ interface TrackListProps {
   tracks: Track[];
   currentTrackIndex: number;
   onTrackSelect: (index: number) => void;
+  isPlaying: boolean; // Added this prop
 }
 
 function formatTime(seconds: number): string {
@@ -23,12 +24,15 @@ function formatTime(seconds: number): string {
 function TrackList({
   tracks,
   currentTrackIndex,
-  onTrackSelect
+  onTrackSelect,
+  isPlaying
 }: TrackListProps) {
+  console.log('TrackList rendering with isPlaying:', isPlaying);
+  console.log('Current track index:', currentTrackIndex);
   const [isFavorite, setIsFavorite] = useState<number[]>([]);
-  const [displayedTracks, setDisplayedTracks] = useState<{track: Track, originalIndex: number}[]>([]);
+  const [displayedTracks, setDisplayedTracks] = useState<{ track: Track, originalIndex: number }[]>([]);
   const [isShuffled, setIsShuffled] = useState(false);
-  
+
   // Initialize displayed tracks with original indices
   useEffect(() => {
     const tracksWithIndices = tracks.map((track, index) => ({
@@ -41,14 +45,14 @@ function TrackList({
   // Function to shuffle tracks
   const handleShuffle = () => {
     const tracksCopy = [...displayedTracks];
-    
+
     // Fisher-Yates shuffle algorithm
     for (let i = tracksCopy.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       // Swap tracks
       [tracksCopy[i], tracksCopy[j]] = [tracksCopy[j], tracksCopy[i]];
     }
-    
+
     setDisplayedTracks(tracksCopy);
     setIsShuffled(true);
   };
@@ -63,7 +67,7 @@ function TrackList({
 
   const toggleFavorite = (originalIndex: number, e: React.MouseEvent) => {
     e.stopPropagation();
-    
+
     if (isFavorite.includes(originalIndex)) {
       setIsFavorite(isFavorite.filter(i => i !== originalIndex));
     } else {
@@ -88,18 +92,27 @@ function TrackList({
       </div>
       <ul>
         {displayedTracks.map((item, index) => (
-          <li 
+          <li
             key={item.originalIndex}
             className={item.originalIndex === currentTrackIndex ? 'active' : ''}
             onClick={() => onTrackSelect(item.originalIndex)}
           >
             <span className="track-number">{item.originalIndex + 1}</span>
-            <span className="track-name">{item.track.name}</span>
+            <span className="track-name">
+              {item.track.name}
+              {item.originalIndex === currentTrackIndex && isPlaying && (
+                <span className="now-playing-indicator" style={{ marginLeft: '8px', display: 'inline-block' }}>
+                  <span className="playing-bar" style={{ display: 'inline-block', width: '3px', height: '8px', backgroundColor: '#1db954', margin: '0 1px', animation: 'barHeight 1.2s ease-in-out infinite' }}></span>
+                  <span className="playing-bar" style={{ display: 'inline-block', width: '3px', height: '4px', backgroundColor: '#1db954', margin: '0 1px', animation: 'barHeight 1.2s ease-in-out infinite 0.2s' }}></span>
+                  <span className="playing-bar" style={{ display: 'inline-block', width: '3px', height: '10px', backgroundColor: '#1db954', margin: '0 1px', animation: 'barHeight 1.2s ease-in-out infinite 0.4s' }}></span>
+                </span>
+              )}
+            </span>
             <span className="track-duration">{formatTime(item.track.duration)}</span>
             <div className="track-actions">
-              <button 
+              <button
                 onClick={(e) => toggleFavorite(item.originalIndex, e)}
-                style={{color: isFavorite.includes(item.originalIndex) ? '#1db954' : undefined}}
+                style={{ color: isFavorite.includes(item.originalIndex) ? '#1db954' : undefined }}
                 title={isFavorite.includes(item.originalIndex) ? "Remove from favorites" : "Add to favorites"}
               >
                 <FaHeart />
