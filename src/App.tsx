@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import playlistsData from './data/playlists.json';
 import MediaPlayer from './components/MediaPlayer';
 import PlaylistSelector from './components/PlaylistSelector';
+import ParticlesBackground from './components/ParticlesBackground';
 import './App.css';
 
 // Types for our data structure
@@ -69,6 +70,7 @@ function App() {
   
   return (
     <div className="app">
+    <ParticlesBackground/>
       <header className="app-header">
         <h1>Linear Media Player</h1>
       </header>
