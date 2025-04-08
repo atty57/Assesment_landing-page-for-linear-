@@ -38,11 +38,14 @@
   }
 }
 
-
 .app-main {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+.app-header h1 {
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 768px) {

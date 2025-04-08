@@ -1,62 +1,183 @@
 .track-list {
-    margin-top: 1rem;
-  }
-  
-  .track-list h3 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
+  margin-top: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.track-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.track-list h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.track-list-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.track-list-controls button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.track-list-controls button:hover {
+  background: rgba(29, 185, 84, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.track-list-controls button svg {
+  font-size: 0.9rem;
+}
+
+.track-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(29, 185, 84, 0.3) rgba(0, 0, 0, 0.2);
+}
+
+.track-list ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.track-list ul::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.track-list ul::-webkit-scrollbar-thumb {
+  background-color: rgba(29, 185, 84, 0.3);
+  border-radius: 4px;
+}
+
+.track-list li {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.track-list li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(2px);
+}
+
+.track-list li.active {
+  background-color: rgba(29, 185, 84, 0.15);
+  position: relative;
+}
+
+.track-list li.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--primary-color);
+  border-radius: 4px 0 0 4px;
+}
+
+.track-number {
+  width: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.track-list li .track-name {
+  flex: 1;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.track-list li.active .track-name {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.track-list .track-duration {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  width: 50px;
+  text-align: right;
+}
+
+.track-list .track-actions {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.track-list li:hover .track-actions {
+  opacity: 1;
+}
+
+.track-actions button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-actions button:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
   .track-list ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    max-height: 200px;
   }
   
-  .track-list li {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: background-color var(--transition-speed) ease;
+  .track-list-controls {
+    display: none;
   }
   
-  .track-list li:hover {
-    background-color: var(--hover-color);
+  .track-actions {
+    display: none !important;
   }
-  
-  .track-list li.active {
-    background-color: rgba(29, 185, 84, 0.2);
-    position: relative;
-  }
-  
-  .track-list li.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background-color: var(--primary-color);
-    border-radius: 4px 0 0 4px;
-  }
-  
-  .track-number {
-    width: 30px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-  }
-  
-  .track-list li .track-name {
-    flex: 1;
-    font-size: 1rem;
-  }
-  
-  .track-list .track-duration {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-  }
-  
+}
+
+.track-list-controls button:nth-child(3) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.track-list-controls button:nth-child(3):hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
