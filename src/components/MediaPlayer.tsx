@@ -5,6 +5,7 @@ import PlayerControls from './PlayerControls';
 import NowPlaying from './NowPlaying';
 import ProgressBar from './ProgressBar';
 import './MediaPlayer.css';
+import VolumeControl from './VolumeControl';
 
 interface Track {
   name: string;
@@ -82,14 +83,16 @@ function MediaPlayer({
         audioRef={audioRef}
         isPlaying={isPlaying}
       />
-      
+
+      <VolumeControl audioRef={audioRef} />
+
       <PlayerControls 
         isPlaying={isPlaying}
         onTogglePlay={onTogglePlay}
         onNextTrack={onNextTrack}
         onPrevTrack={onPrevTrack}
       />
-      
+
       <TrackList 
         tracks={playlist.tracks}
         currentTrackIndex={currentTrackIndex}
