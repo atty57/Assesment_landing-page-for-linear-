@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import playlistsData from './data/playlists.json';
 import MediaPlayer from './components/MediaPlayer';
 import PlaylistSelector from './components/PlaylistSelector';
